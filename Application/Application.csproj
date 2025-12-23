@@ -6,5 +6,13 @@
     <Nullable>enable</Nullable>
     <OutputType>Dll</OutputType>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Infraestructure\Infraestructure.csproj" />
+  </ItemGroup>
+
+ <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
 
 </Project>
