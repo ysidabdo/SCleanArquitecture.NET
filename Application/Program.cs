@@ -1,7 +1,12 @@
+using Application.Config;
 using Infraestructure.Extension;
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Configuration
+    .AddJsonFile("Config/appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"Config/appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
 
 builder.AddSQLConnection();
 builder.AgregarCola();
@@ -9,12 +14,12 @@ builder.AgregarCola();
 var app = builder.Build();
 
 
-app.MapGet("/person/{id}", (int id, PersonService personService) =>
+app.MapGet("/person/{id}", async Task<IResult>(int id, PersonService personService) =>
 {
     //Este try catch es solo para demostrar el manejo de errores y respuestas HTTP adecuadas, se implementara filtro de excepciones en el futuro
     try
     {
-        var person = personService.GetPersonById(id);
+        var person = await personService.GetPersonById(id);
         return Results.Ok(person);
     }
     catch (KeyNotFoundException)

@@ -9,8 +9,8 @@ public class PersonService
         _personRepository = personRepository;
     }
 
-    public Person GetPersonById(int id)
+    public async Task<Person> GetPersonById(int id)
     {
-        return _personRepository.GetPersonById(id);
+        return await _personRepository.GetPersonById(id);
     }
 }

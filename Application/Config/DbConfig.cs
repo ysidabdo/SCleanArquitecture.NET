@@ -1,7 +1,7 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
 using Microsoft.Data.Sqlite;
-
+namespace Application.Config;
 public static class DbConfig
 {
     private const string InMemoryConn = "Data Source=InMemoryDb;Mode=Memory;Cache=Shared";

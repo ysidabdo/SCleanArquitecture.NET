@@ -1,5 +1,6 @@
 using System.Data;
 using Dapper;
+using Infraestructure.DBRepositories;
 
 public class PersonTableRepository
 {
@@ -10,11 +11,11 @@ public class PersonTableRepository
         _connectionFactory = connectionFactory;
     }
 
-    public virtual IEnumerable<dynamic> GetAllPersonsWhere(string whereClause)
+    public virtual async Task<IEnumerable<PersonDbEntity>> GetAllPersonsWhere(string whereClause)
     {
         var sql = $"SELECT Id, FirstName, LastName, Age FROM persons WHERE {whereClause}";
         using var connection = _connectionFactory();
         connection.Open();
-        return connection.Query(sql);
+        return await connection.QueryAsync<PersonDbEntity>(sql);
     }
 }
