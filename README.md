@@ -1,6 +1,6 @@
 <h2>Arquitectura S2Clean (Sub And Supra Clean) </h2>
 
-Enfoque más moderno enofcado en Microservicios de arquitectura limpia basada en la tradicional Arquitectura Clean, que no solo prioriza la Capa de Dominio sino tambien la Capa de Arquitectura, con el fin de permitir mayor control, reutilización, seguridad e integración a procesos devops en especial en aplicaciones Cloud Native.
+Enfoque más moderno basado en la tradicional Arquitectura Clean, que no solo prioriza la Capa de Dominio sino tambien la Capa de Arquitectura, con el fin de permitir mayor control, reutilización, seguridad e integración a procesos devops en especial en aplicaciones Cloud Native y arquitecturas de Microservicios.
 
 
 <img width="860" height="533" alt="image" src="https://github.com/user-attachments/assets/9665b891-3355-42b2-a3f8-e62ab58a7fa3" />
